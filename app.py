@@ -32,7 +32,7 @@ def classify_image(img):
 
 # Define the input and output types for the Gradio interface
 image_input = gr.inputs.Image(shape=(224, 224))
-label_output = gr.outputs.Label(num_top_classes=len(categories))
+label_output = gr.outputs.Label()
 
 # Define example images for the interface
 examples = [
