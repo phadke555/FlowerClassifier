@@ -1,12 +1,18 @@
 from fastai.vision.all import *
+import gradio as gr
 
 learn = load_learner('model.pkl')
 
-labels = learn.dls.vocab
-def predict(img):
-    img = PILImage.create(img)
-    pred,pred_idx,probs = learn.predict(img)
-    return {labels[i]: float(probs[i]) for i in range(len(labels))}
+categories = 'Sunflower', 'Orchid', 'Rose'
 
-import gradio as gr
-gr.Interface(fn=predict, inputs=gr.inputs.Image(shape=(512, 512)), outputs=gr.outputs.Label(num_top_classes=3)).launch()
+def classify_image(img):
+    pred, idx, probs = learn.predict(img)
+    return(dict(zip(categories, map(float, probs))))
+
+image = gr.inputs.Image(shape=(192,192))
+label = gr.outputs.label()
+examples = ['sunflower.jpeg', 'orchid.jpeg', 'rose.jpeg']
+
+intf = gr.Interface(fn=classify_image, inputs=image, outputs=label, examples=examples)
+intf.launch(inline=False, share=True)
+
