@@ -9,4 +9,4 @@ def predict(img):
     return {labels[i]: float(probs[i]) for i in range(len(labels))}
 
 import gradio as gr
-gr.Interface(fn=predict, inputs=gr.inputs.Image(shape=(512, 512)), outputs=gr.outputs.Label(num_top_classes=3)).launch(share=True)
+gr.Interface(fn=predict, inputs=gr.inputs.Image(shape=(512, 512)), outputs=gr.outputs.Label(num_top_classes=3)).launch()
