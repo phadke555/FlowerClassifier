@@ -1,20 +1,20 @@
 # Flower Classifier
+This repository contains code and resources for a deep learning image classifier that utilizes convolutional neural networks (CNN) and the Transformers library to classify different types of flowers.
 
-This is a deep learning image classifier built using Python. I am using HuggingFace Spaces to host a web application for this model. A 'convnext_tiny_in22k' image model was used to classify 12 different types of flowers: 'sunflower','rose', 'orchid', 'gladiolus', 'dahlia', 'hydrangea', 'anemone', 'lily', 'tulip', 'daisy', 'carnation', 'daffodil'.
+### Task Overview
+The goal of this project is to build an image classifier that can accurately identify 12 different types of flowers. The flowers included in the classification task are: 'sunflower', 'rose', 'orchid', 'gladiolus', 'dahlia', 'hydrangea', 'anemone', 'lily', 'tulip', 'daisy', 'carnation', and 'daffodil'. By utilizing deep learning techniques and state-of-the-art image models, we aim to achieve high accuracy in flower classification.
 
-The Python Notebook with the creation of the model is included. It utilizes the FastAI, PyTorch, and Pandas libraries to train and download the model. The notebook also contains data pre-processing, downloading of the images, and evaluation of the model using a cross-validation matrix. An 'app.py' Python script is also included which includes the code to run the web application. 
+### Model and Libraries Used
+To perform the image classification task, we employed the 'convnext_tiny_in22k' image model, a compact and efficient CNN model suitable for various image recognition tasks. The model architecture and training process are detailed in the provided Python Notebook.
 
-The web app is hosted at this link: https://huggingface.co/spaces/rohanphadke/flowerclassifier. Input an image of your choice and it will return the class of the flower.
+In implementing the model, we utilized several libraries in Python:
 
----
-title: Flowerclassifier
-emoji: 🦀
-colorFrom: purple
-colorTo: indigo
-sdk: gradio
-sdk_version: 3.28.3
-app_file: app.py
-pinned: false
----
-
-Check out the configuration reference at https://huggingface.co/docs/hub/spaces-config-reference
+FastAI: A deep learning library built on top of PyTorch, which simplifies the process of training and deploying deep learning models.
+PyTorch: A popular deep learning framework that provides powerful tools and utilities for building and training neural networks.
+Pandas: A versatile data manipulation library that aids in data preprocessing and analysis.
+### Repository Structure
+notebooks/: This directory contains the Python Notebook that details the creation of the image classification model. It includes the model architecture, data preprocessing steps, image download, and evaluation using a cross-validation matrix.
+app.py: The Python script to run the web application, allowing users to input an image and obtain the predicted class of the flower.
+requirements.txt: A file specifying the required dependencies for running the code in this repository.
+### Web Application
+The trained model is hosted as a web application on HuggingFace Spaces, accessible at the following link: Flower Classifier Web App. Simply upload an image of a flower, and the application will return the predicted class of the flower.
